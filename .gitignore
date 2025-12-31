@@ -32,4 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-/src/main/resources/application.properties
+### Spring Boot config (keep local secrets out of git) ###
+**/src/main/resources/application.properties
+**/src/test/resources/application.properties
