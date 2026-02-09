@@ -17,18 +17,23 @@ public class RuleController {
         this.ruleService = ruleService;
     }
 
-    @PostMapping
+    @RequestMapping(method = RequestMethod.POST)
     public Rule createRule(@RequestBody RuleRequest ruleRequest) {
         return ruleService.createRule(ruleRequest);
     }
 
-    @GetMapping("/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Rule getRuleById(@PathVariable Long id) {
         return ruleService.getRuleById(id);
     }
 
-    @GetMapping
+    @RequestMapping(method = RequestMethod.GET)
     public List<Rule> getAllRules() {
         return ruleService.getAllRules();
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public Rule deleteRuleById(@PathVariable Long id) {
+        return ruleService.deleteRuleById(id);
     }
 }

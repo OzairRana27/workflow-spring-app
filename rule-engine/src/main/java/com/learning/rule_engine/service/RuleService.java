@@ -35,4 +35,11 @@ public class RuleService {
     public List<Rule> getAllRules() {
         return ruleRepository.findAll();
     }
+
+    public Rule deleteRuleById(Long id) {
+        Rule ruleItem = ruleRepository.findById(id)
+                        .orElseThrow(() -> new RuntimeException("Rule not found with ID:" + id));
+        ruleRepository.deleteById(id);
+        return ruleItem;
+    }
 }

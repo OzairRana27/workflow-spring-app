@@ -8,6 +8,4 @@ import com.learning.rule_engine.model.Rule;
 
 public interface RuleRepository extends JpaRepository<Rule, Long>{
     Optional<Rule> findByName(String name);
-    Optional<Rule> findById(String id);
-    List<Rule> findAll();
 }
