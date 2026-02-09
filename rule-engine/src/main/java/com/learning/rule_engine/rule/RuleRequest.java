@@ -1,4 +1,4 @@
-package com.learning.rule_engine.objects;
+package com.learning.rule_engine.rule;
 
 import lombok.Getter;
 import lombok.Setter;

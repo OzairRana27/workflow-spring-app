@@ -1,10 +1,6 @@
-package com.learning.rule_engine.service;
+package com.learning.rule_engine.rule;
 
 import org.springframework.stereotype.Service;
-
-import com.learning.rule_engine.model.Rule;
-import com.learning.rule_engine.objects.RuleRequest;
-import com.learning.rule_engine.repository.RuleRepository;
 
 import java.util.List;
 
@@ -34,6 +30,19 @@ public class RuleService {
 
     public List<Rule> getAllRules() {
         return ruleRepository.findAll();
+    }
+
+    public Rule updateRuleById(Long id, RuleRequest ruleRequest) {
+        Rule existingRule = ruleRepository.findById(id).orElseThrow(() -> new RuntimeException("Rule not found with ID:" + id));
+
+        existingRule.setName(ruleRequest.getName());
+        existingRule.setDescription(ruleRequest.getDescription());
+        existingRule.setConditionJson(ruleRequest.getCondition());
+        existingRule.setActionJson(ruleRequest.getAction());
+        existingRule.setPriority(ruleRequest.getPriority());
+        existingRule.setActive(ruleRequest.getIsActive());
+
+        return ruleRepository.save(existingRule);
     }
 
     public Rule deleteRuleById(Long id) {

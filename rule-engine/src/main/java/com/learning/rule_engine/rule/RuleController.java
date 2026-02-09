@@ -1,10 +1,6 @@
-package com.learning.rule_engine.controller;
+package com.learning.rule_engine.rule;
 
 import org.springframework.web.bind.annotation.*;
-
-import com.learning.rule_engine.model.Rule;
-import com.learning.rule_engine.objects.RuleRequest;
-import com.learning.rule_engine.service.RuleService;
 
 import java.util.List;
 

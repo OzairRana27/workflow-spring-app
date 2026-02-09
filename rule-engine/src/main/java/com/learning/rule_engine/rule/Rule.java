@@ -1,4 +1,4 @@
-package com.learning.rule_engine.model;
+package com.learning.rule_engine.rule;
 
 import jakarta.persistence.*;
 
