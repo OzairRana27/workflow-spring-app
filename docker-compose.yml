@@ -15,6 +15,7 @@ services:
     
   app:
     build: .
+    image: rule-engine-app:${APP_VERSION}
     container_name: rule-engine-app
     depends_on:
       - db

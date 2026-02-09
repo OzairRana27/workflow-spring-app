@@ -28,6 +28,11 @@ public class RuleController {
         return ruleService.getAllRules();
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public Rule updateRuleById(@PathVariable Long id, @RequestBody RuleRequest ruleRequest) {
+        return ruleService.updateRuleById(id, ruleRequest);
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Rule deleteRuleById(@PathVariable Long id) {
         return ruleService.deleteRuleById(id);

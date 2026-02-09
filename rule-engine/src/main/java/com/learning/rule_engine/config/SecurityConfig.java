@@ -15,6 +15,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable()) // This is the line you need
             .authorizeHttpRequests(auth -> auth
                     .requestMatchers(HttpMethod.DELETE, "/api/rules/**").permitAll()
+                    .requestMatchers(HttpMethod.PUT, "/api/rules/**").permitAll()
                     .anyRequest().permitAll() // Allow all requests for now to test the DELETE
             );
         return http.build();
