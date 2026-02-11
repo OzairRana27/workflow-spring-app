@@ -1,4 +1,4 @@
-package com.learning.rule_engine.rule;
+package com.learning.rule_engine.rule_engine_core.rule.dto;
 
 import lombok.Getter;
 import lombok.Setter;

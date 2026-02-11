@@ -2,6 +2,10 @@ package com.learning.rule_engine.rule;
 
 import org.springframework.web.bind.annotation.*;
 
+import com.learning.rule_engine.rule_engine_core.rule.domain.Rule;
+import com.learning.rule_engine.rule_engine_core.rule.dto.RuleRequest;
+import com.learning.rule_engine.rule_engine_core.rule.service.RuleService;
+
 import java.util.List;
 
 @RestController

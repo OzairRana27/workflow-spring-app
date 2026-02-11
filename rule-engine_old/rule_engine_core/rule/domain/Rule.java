@@ -1,4 +1,4 @@
-package com.learning.rule_engine.rule;
+package com.learning.rule_engine.rule_engine_core.rule.domain;
 
 import jakarta.persistence.*;
 
@@ -48,4 +48,14 @@ public class Rule {
     @LastModifiedDate
     @Column(nullable = false)
     private Instant updatedAt;
+
+    // Logic for updating the domain object
+    public void updateFrom(Rule other) {
+        this.name = other.getName();
+        this.description = other.getDescription();
+        this.conditionJson = other.getConditionJson();
+        this.actionJson = other.getActionJson();
+        this.priority = other.getPriority();
+        this.isActive = other.isActive();
+    }
 }
